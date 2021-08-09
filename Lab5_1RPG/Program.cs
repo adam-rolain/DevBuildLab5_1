@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lab5_1RPG
 {
@@ -6,49 +7,27 @@ namespace Lab5_1RPG
     {
         static void Main(string[] args)
         {
-            // TESTING GAMECHARACTER CLASS
-            Console.WriteLine("\n----------GameCharacterTest-----------");
-            GameCharacter character1 = new GameCharacter("Voldemort", 82, 99);
-            character1.Play();
-            GameCharacter character2 = new GameCharacter("Harry Potter", -10, 50);
-            character2.Play();
-            GameCharacter character3 = new GameCharacter("Hermoine Granger", -50, 101);
-            character3.Play();
-            GameCharacter character4 = new GameCharacter(null , -10, 50);
-            character4.Play();
-
-            // TESTING MAGICUSINGCHARACTER
-            Console.WriteLine("\n----------MagicUsingCharacterTest-----------");
-            MagicUsingCharacter mCharacter1 = new MagicUsingCharacter("Voldemort", 82, 99, 75);
-            mCharacter1.Play();
-            MagicUsingCharacter mCharacter2 = new MagicUsingCharacter("Harry Potter", -10, 50, -1);
-            mCharacter2.Play();
-            MagicUsingCharacter mCharacter3 = new MagicUsingCharacter("Hermoine Granger", -50, 101, 101);
-            mCharacter3.Play();
-            MagicUsingCharacter mCharacter4 = new MagicUsingCharacter(null, -10, 50, 82);
-            mCharacter4.Play();
-
-            // TESTING WIZARD CLASS
-            Console.WriteLine("\n----------WizardTest-----------");
+            // CHARACTERS
             Wizard wizard1 = new Wizard("Voldemort", 82, 99, 75, 82);
-            wizard1.Play();
-            Wizard wizard2 = new Wizard("Harry Potter", -10, 50, -1, -1);
-            wizard2.Play();
-            Wizard wizard3 = new Wizard("Hermoine Granger", -50, 101, 101, 101);
-            wizard3.Play();
-            Wizard wizard4 = new Wizard(null, -10, 50, 82, 96);
-            wizard4.Play();
+            Wizard wizard2 = new Wizard("Harry Potter", 40, 40, 90, 100);
+            Wizard wizard3 = new Wizard("Hermoine Granger", 11, 100, 80, 100);
+            Warrior warrior1 = new Warrior("Jon Snow", 72, 99, "Sword");
+            Warrior warrior2 = new Warrior("Robert Baratheon", 90, 32, "Hammer");
+            Warrior warrior3 = new Warrior("Gregor Clegane", 100, 12, "Longsword");
 
-            // TESTING Warrior CLASS
-            Console.WriteLine("\n----------WarriorTest-----------");
-            Warrior warrior1 = new Warrior("Jon Snow", 82, 99, "Sword");
-            warrior1.Play();
-            Warrior warrior2 = new Warrior("Private Ryan", -10, 50, "Gun");
-            warrior2.Play();
-            Warrior warrior3 = new Warrior("Inigo Montoya", -50, 101, "");
-            warrior3.Play();
-            Warrior warrior4 = new Warrior(null, -10, 50, null);
-            warrior4.Play();
+            List<GameCharacter> gameCharacters = new List<GameCharacter>();
+            gameCharacters.Add(warrior1);
+            gameCharacters.Add(warrior2);
+            gameCharacters.Add(wizard1);
+            gameCharacters.Add(wizard2);
+            gameCharacters.Add(wizard3);
+
+            Console.WriteLine("Welcome to World of Dev.Buildcraft!");
+
+            foreach (GameCharacter character in gameCharacters)
+            {
+                character.Play();
+            }
         }
     }
 
